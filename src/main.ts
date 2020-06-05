@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import store from '@/store';
-import { interfaceSettingsModule, Themes } from '@/store/settings/InterfaceSettingsStore';
+import store, { interfaceSettingsModule } from '@/store';
+import { Themes } from '@/store/settings/InterfaceSettingsStore';
 import vuetify from './plugins/vuetify';
 import App from './App.vue';
 

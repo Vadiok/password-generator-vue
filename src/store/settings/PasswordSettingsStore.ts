@@ -1,10 +1,9 @@
 import {
-  getModule,
   Module,
   Mutation,
   VuexModule,
 } from 'vuex-module-decorators';
-import store from '@/store';
+import { ModuleTitles } from '../ModuleTitles';
 
 const defaults = {
   passwordLength: 8,
@@ -23,10 +22,8 @@ const passwordLengthMin = 1;
 const passwordLengthMax = 256;
 
 @Module({
-  store,
-  dynamic: true,
   namespaced: true,
-  name: 'PasswordSettings',
+  name: ModuleTitles.PasswordSettings,
   preserveState: true,
 })
 export class PasswordSettingsStore extends VuexModule {
@@ -111,5 +108,3 @@ export class PasswordSettingsStore extends VuexModule {
     }
   }
 }
-
-export const passwordSettingsModule = getModule(PasswordSettingsStore);

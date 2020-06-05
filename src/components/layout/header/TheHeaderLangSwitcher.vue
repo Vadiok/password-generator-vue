@@ -3,10 +3,8 @@ import {
   Component,
 } from 'vue-property-decorator';
 import { mdiTranslate } from '@mdi/js';
-import {
-  interfaceSettingsModule,
-  Languages,
-} from '@/store/settings/InterfaceSettingsStore';
+import { interfaceSettingsModule } from '@/store';
+import { Languages } from '@/store/settings/InterfaceSettingsStore';
 import AbstractHeaderPropertySwitcher from './AbstractHeaderPropertySwitcher/AbstractHeaderPropertySwitcher.vue';
 
 @Component

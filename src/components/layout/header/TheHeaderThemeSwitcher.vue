@@ -3,10 +3,8 @@ import {
   Component,
 } from 'vue-property-decorator';
 import { mdiThemeLightDark } from '@mdi/js';
-import {
-  interfaceSettingsModule,
-  Themes,
-} from '@/store/settings/InterfaceSettingsStore';
+import { interfaceSettingsModule } from '@/store';
+import { Themes } from '@/store/settings/InterfaceSettingsStore';
 import AbstractHeaderPropertySwitcher from './AbstractHeaderPropertySwitcher/AbstractHeaderPropertySwitcher.vue';
 
 @Component

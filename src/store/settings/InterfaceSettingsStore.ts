@@ -1,10 +1,9 @@
 import {
-  getModule,
   Module,
   Mutation,
   VuexModule,
 } from 'vuex-module-decorators';
-import store from '@/store';
+import { ModuleTitles } from '../ModuleTitles';
 
 export enum Languages {
   en = 'en',
@@ -29,10 +28,8 @@ const availableThemes: Themes[] = [
 ];
 
 @Module({
-  store,
-  dynamic: true,
   namespaced: true,
-  name: 'InterfaceSettings',
+  name: ModuleTitles.InterfaceSettings,
   preserveState: true,
 })
 export class InterfaceSettingsStore extends VuexModule {
@@ -62,5 +59,3 @@ export class InterfaceSettingsStore extends VuexModule {
     }
   }
 }
-
-export const interfaceSettingsModule = getModule(InterfaceSettingsStore);

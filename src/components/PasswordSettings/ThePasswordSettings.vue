@@ -1,5 +1,5 @@
 <template lang="pug">
-v-form.mt-8(
+v-form.mt-4.mt-lg-8(
   @submit.prevent
 )
   ThePasswordSettingsLength

@@ -1,6 +1,6 @@
 <template lang="pug">
 v-content
-  v-container.content-container.mx-auto.pt-8
+  v-container.content-container.mx-auto.pt-4.pt-lg-8
     ThePasswordList
     ThePasswordSettings
 </template>

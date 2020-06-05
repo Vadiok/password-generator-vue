@@ -11,10 +11,8 @@ import {
   Component,
   Vue,
 } from 'vue-property-decorator';
-import {
-  interfaceSettingsModule,
-  Themes,
-} from '@/store/settings/InterfaceSettingsStore';
+import { interfaceSettingsModule } from '@/store';
+import { Themes } from '@/store/settings/InterfaceSettingsStore';
 import TheHeader from '@/components/layout/header/TheHeader.vue';
 import TheContent from '@/components/layout/content/TheContent.vue';
 

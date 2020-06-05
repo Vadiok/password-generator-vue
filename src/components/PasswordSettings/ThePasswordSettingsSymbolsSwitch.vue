@@ -3,6 +3,7 @@ v-switch(
   v-model="value"
   :label="label"
   :disabled="disabled"
+  hide-details
 )
 </template>
 
@@ -13,7 +14,7 @@ import {
   Prop,
   Watch,
 } from 'vue-property-decorator';
-import { passwordSettingsModule } from '@/store/settings/PasswordSettingsStore';
+import { passwordSettingsModule } from '@/store';
 
 export enum SymbolTypes {
   lowercase = 'lowercase',

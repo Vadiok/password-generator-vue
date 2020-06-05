@@ -1,11 +1,19 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { getModule } from 'vuex-module-decorators';
 import createPersistedState from 'vuex-persistedstate';
 import createMutationsSharer from 'vuex-shared-mutations';
+import { ModuleTitles } from './ModuleTitles';
+import { InterfaceSettingsStore } from './settings/InterfaceSettingsStore';
+import { PasswordSettingsStore } from './settings/PasswordSettingsStore';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
+  modules: {
+    [ModuleTitles.InterfaceSettings]: InterfaceSettingsStore,
+    [ModuleTitles.PasswordSettings]: PasswordSettingsStore,
+  },
   plugins: [
     createPersistedState({
       reducer(state: { InterfaceSettings: {}; PasswordSettings: {}; Password: {} }) {
@@ -22,3 +30,8 @@ export default new Vuex.Store({
     }),
   ],
 });
+
+export default store;
+
+export const interfaceSettingsModule = getModule(InterfaceSettingsStore, store);
+export const passwordSettingsModule = getModule(PasswordSettingsStore, store);

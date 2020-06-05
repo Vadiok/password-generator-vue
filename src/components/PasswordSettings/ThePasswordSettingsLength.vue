@@ -13,7 +13,7 @@ import {
   Vue,
   Watch,
 } from 'vue-property-decorator';
-import { passwordSettingsModule } from '@/store/settings/PasswordSettingsStore';
+import { passwordSettingsModule } from '@/store';
 
 @Component
 export default class ThePasswordSettingsLength extends Vue {

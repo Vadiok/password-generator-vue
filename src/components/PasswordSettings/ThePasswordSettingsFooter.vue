@@ -1,5 +1,5 @@
 <template lang="pug">
-v-row.ma-0(
+v-row.ma-0.mt-4.mt-lg-8(
   justify="space-between"
 )
   v-btn(
@@ -22,7 +22,7 @@ import {
   Vue,
 } from 'vue-property-decorator';
 import { mdiRefresh, mdiCogRefresh } from '@mdi/js';
-import { passwordSettingsModule } from '@/store/settings/PasswordSettingsStore';
+import { passwordSettingsModule } from '@/store';
 import { passwordModule } from '@/store/passwords/PasswordStore';
 
 @Component
