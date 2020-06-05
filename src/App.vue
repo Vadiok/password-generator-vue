@@ -1,29 +1,43 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+<template lang="pug">
+v-app(
+  :class="{ 'theme--black': isBlackTheme }"
+)
+  TheHeader
+  TheContent
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import {
+  Component,
+  Vue,
+} from 'vue-property-decorator';
+import {
+  interfaceSettingsModule,
+  Themes,
+} from '@/store/settings/InterfaceSettingsStore';
+import TheHeader from '@/components/layout/header/TheHeader.vue';
+import TheContent from '@/components/layout/content/TheContent.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    TheContent,
+    TheHeader,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  get isBlackTheme() {
+    return interfaceSettingsModule.theme === Themes.black;
+  }
+}
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.v-application {
+  min-width: 320px;
+  &.theme--black {
+    &, &.theme--dark {
+      background: #000;
+    }
+  }
 }
 </style>
