@@ -1,7 +1,7 @@
 <template lang="pug">
 v-app-bar(
   app
-  color="primary"
+  :color="color"
   dark
 )
   TheHeaderTitle
@@ -15,6 +15,8 @@ import {
   Component,
   Vue,
 } from 'vue-property-decorator';
+import { interfaceSettingsModule } from '@/store';
+import { Themes } from '@/store/settings/InterfaceSettingsStore';
 import TheHeaderTitle from './TheHeaderTitle.vue';
 import TheHeaderLangSwitcher from './TheHeaderLangSwitcher.vue';
 import TheHeaderThemeSwitcher from './TheHeaderThemeSwitcher.vue';
@@ -27,5 +29,15 @@ import TheHeaderThemeSwitcher from './TheHeaderThemeSwitcher.vue';
   },
 })
 export default class TheHeader extends Vue {
+  get color() {
+    const { theme } = interfaceSettingsModule;
+    if (theme === Themes.dark) {
+      return 'teal darken-4';
+    }
+    if (theme === Themes.black) {
+      return 'blackgrey darken-4';
+    }
+    return 'teal';
+  }
 }
 </script>
