@@ -63,7 +63,9 @@ export default class PasswordListItem extends Vue {
     copy(this.password, {
       onCopy: () => {
         this.snackbar = true;
+        return true;
       },
+      format: 'text/plain',
     });
   }
 
