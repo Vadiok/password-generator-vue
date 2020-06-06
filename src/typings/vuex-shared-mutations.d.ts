@@ -1,7 +1,15 @@
 declare module 'vuex-shared-mutations' {
-  interface IOptions {
-    predicate?: string[]|((mutation: { type?: string; payload: any }, state?: any) => boolean);
+  interface Mutation {
+    type?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    payload: any;
   }
 
-  export default function createMutationsSharer(options?: IOptions): any;
+  interface Options {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    predicate?: string[]|((mutation: Mutation, state?: any) => boolean);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  export default function createMutationsSharer(options?: Options): (store: any) => void;
 }
