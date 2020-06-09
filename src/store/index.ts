@@ -14,6 +14,7 @@ const store = new Vuex.Store({
   modules: {
     [ModuleTitles.InterfaceSettings]: InterfaceSettingsStore,
     [ModuleTitles.PasswordSettings]: PasswordSettingsStore,
+    [ModuleTitles.Password]: PasswordStore,
   },
   plugins: [
     createPersistedState({
