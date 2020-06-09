@@ -4,13 +4,12 @@ import {
   Mutation,
   getModule,
 } from 'vuex-module-decorators';
-import store from '@/store';
+import { ModuleTitles } from '@/store/ModuleTitles';
 
 @Module({
-  store,
-  dynamic: true,
   namespaced: true,
-  name: 'Password',
+  name: ModuleTitles.Password,
+  preserveState: false,
 })
 export class PasswordStore extends VuexModule {
   passwordUpdated = 0;
