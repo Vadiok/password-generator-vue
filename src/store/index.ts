@@ -10,6 +10,12 @@ import { PasswordStore } from './passwords/PasswordStore';
 
 Vue.use(Vuex);
 
+interface AppState {
+  [ModuleTitles.InterfaceSettings]: InterfaceSettingsStore;
+  [ModuleTitles.PasswordSettings]: PasswordSettingsStore;
+  [ModuleTitles.Password]: PasswordStore;
+}
+
 const store = new Vuex.Store({
   modules: {
     [ModuleTitles.InterfaceSettings]: InterfaceSettingsStore,
@@ -18,10 +24,10 @@ const store = new Vuex.Store({
   },
   plugins: [
     createPersistedState({
-      reducer(state: { InterfaceSettings: {}; PasswordSettings: {}; Password: {} }) {
+      reducer(state: AppState) {
         return {
-          InterfaceSettings: state.InterfaceSettings,
-          PasswordSettings: state.PasswordSettings,
+          [ModuleTitles.InterfaceSettings]: state.InterfaceSettings,
+          [ModuleTitles.PasswordSettings]: state.PasswordSettings,
         };
       },
     }),
