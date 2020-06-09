@@ -2,7 +2,6 @@ import {
   VuexModule,
   Module,
   Mutation,
-  getModule,
 } from 'vuex-module-decorators';
 import { ModuleTitles } from '@/store/ModuleTitles';
 
@@ -19,5 +18,3 @@ export class PasswordStore extends VuexModule {
     this.passwordUpdated += 1;
   }
 }
-
-export const passwordModule = getModule(PasswordStore);

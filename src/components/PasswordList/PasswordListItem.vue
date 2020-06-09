@@ -25,8 +25,7 @@ import {
 } from 'vue-property-decorator';
 import copy from 'copy-to-clipboard';
 import { mdiClipboardArrowDownOutline } from '@mdi/js';
-import { passwordSettingsModule } from '@/store';
-import { passwordModule } from '@/store/passwords/PasswordStore';
+import { passwordSettingsModule, passwordModule } from '@/store';
 import { generatePassword } from './generatePassword';
 
 @Component

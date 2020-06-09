@@ -22,8 +22,7 @@ import {
   Vue,
 } from 'vue-property-decorator';
 import { mdiRefresh, mdiCogRefresh } from '@mdi/js';
-import { passwordSettingsModule } from '@/store';
-import { passwordModule } from '@/store/passwords/PasswordStore';
+import { passwordSettingsModule, passwordModule } from '@/store';
 
 @Component
 export default class ThePasswordSettingsFooter extends Vue {

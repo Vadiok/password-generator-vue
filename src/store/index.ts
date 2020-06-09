@@ -6,6 +6,7 @@ import createMutationsSharer from 'vuex-shared-mutations';
 import { ModuleTitles } from './ModuleTitles';
 import { InterfaceSettingsStore } from './settings/InterfaceSettingsStore';
 import { PasswordSettingsStore } from './settings/PasswordSettingsStore';
+import { PasswordStore } from './passwords/PasswordStore';
 
 Vue.use(Vuex);
 
@@ -35,3 +36,4 @@ export default store;
 
 export const interfaceSettingsModule = getModule(InterfaceSettingsStore, store);
 export const passwordSettingsModule = getModule(PasswordSettingsStore, store);
+export const passwordModule = getModule(PasswordStore, store);
